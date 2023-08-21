@@ -20,24 +20,23 @@ describe('Direct ASSESSMENT test',() =>{
     cy.url().should('include', '/password-reset') //  navigates to '/password-reset' page
   })
 
-//   it('should display an error message for invalid login', () => {
-//     cy.get('input[name="username"]').type('invalidUsername');
-//     cy.get('input[name="password"]').type('invalidPassword');
-//     cy.get('button[type="submit"]').click();
+  it('should display an error message for invalid login', () => {
+    cy.get('input[name="username"]').type('invalidUsername');
+     cy.get('input[name="password"]').type('invalidPassword');
+     cy.get('button[type="submit"]').click();
 
-//     cy.get('.error-message').should('be.visible');
-//   });
+     cy.get('.error-message').should('be.visible');
+   });
 
-  
-//   it('should successfully log in with valid credentials', () => {
-//     cy.get('input[name="username"]').type('validUsername');
-//     cy.get('input[name="password"]').type('validPassword');
-//     cy.get('button[type="submit"]').click();
+     it('should successfully log in with valid credentials', () => {
+     cy.get('input[name="username"]').type('validUsername');
+     cy.get('input[name="password"]').type('validPassword');
+     cy.get('button[type="submit"]').click();
 
 
-//     cy.url().should('include', '/dashboard'); // Replace '/dashboard' with the URL of the dashboard page
-//     cy.get('.welcome-message').should('be.visible');
-//   });
+    cy.url().should('include', '/dashboard'); // Replace '/dashboard' with the URL of the dashboard page
+     cy.get('.welcome-message').should('be.visible');
+   });
  });
 
 
